@@ -37,7 +37,7 @@ body{
 }
 
 .navbar img{
-    height:75px; /* LOGO DIMINUÍDA */
+    height:75px;
     margin-left:20px;
 }
 
@@ -141,7 +141,7 @@ body{
     height:95vh;
     background:
         linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-        url("mulher.jpeg");
+        url("mulher.jpeg"); /* DESKTOP */
     background-size:cover;
     background-position:center top;
     display:flex;
@@ -228,11 +228,20 @@ body{
 @media(max-width:768px){
     .nav-links{display:none}
     .navbar img{height:70px}
+
     .hero{
         padding:0 20px;
         height:85vh;
         text-align:center;
+
+        /* IMAGEM SOMENTE NO MOBILE */
+        background:
+            linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+            url("Muie.jpg");
+        background-size:cover;
+        background-position:center top;
     }
+
     .hero h1{font-size:32px}
     .section{padding:70px 20px}
     .section h2{text-align:center;font-size:26px}
