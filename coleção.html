@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Coleções | QueenFit Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+.fade-page{
+    animation:fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:70px;
+    background:rgba(0,0,0,.9);
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:30px;
+    z-index:1000;
+}
+.navbar img{height:45px}
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+.navbar a:hover{color:#f25c54}
+
+/* CONTEÚDO */
+.container{
+    padding:130px 40px;
+}
+
+/* TÍTULO ANIMADO */
+.titulo{
+    font-size:38px;
+    margin-bottom:40px;
+    opacity:0;
+    transform:translateY(30px);
+    animation:slideDown .8s ease forwards;
+}
+
+@keyframes slideDown{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* PRODUTOS */
+.produtos{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* CARD */
+.card{
+    width:260px;
+    background:linear-gradient(180deg,#1a1a1a,#0e0e0e);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+    opacity:0;
+    transform:translateY(40px);
+    animation:cardIn .8s ease forwards;
+}
+
+.card:nth-child(1){animation-delay:.2s}
+.card:nth-child(2){animation-delay:.4s}
+.card:nth-child(3){animation-delay:.6s}
+
+@keyframes cardIn{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:contain;
+    padding:15px;
+    background:#0e0e0e;
+}
+
+.card .nome{
+    padding:15px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .produtos{justify-content:center}
+    .titulo{font-size:30px}
+}
+</style>
+</head>
+
+<body class="fade-page">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <img src="QueenFit Store.png">
+    <a href="index.html">Home</a>
+    <a href="colecao.html">Coleções</a>
+    <a href="https://www.instagram.com/queen.fit.store/" target="_blank">Instagram</a>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="container">
+    <h1 class="titulo">✨ Coleções</h1>
+
+    <div class="produtos">
+        <!-- SHORT -->
+        <div class="card">
+            <a href="https://s.shopee.com.br/BNO1EABCB" target="_blank">
+                <img src="short.jpeg">
+                <div class="nome">Short Fitness Feminino</div>
+            </a>
+        </div>
+
+        <!-- OUTRO PRODUTO (exemplo) -->
+        <div class="card">
+            <img src="short.png">
+            <div class="nome">Short Modelador</div>
+        </div>
+
+        <div class="card">
+            <img src="short3.jpeg">
+            <div class="nome">Short Premium</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
