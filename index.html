@@ -9,13 +9,10 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-
 body{
     font-family:'Poppins',sans-serif;
     background:#0b0b0b;
     color:white;
-    overflow-x:hidden;
 }
 
 /* ================= NAVBAR ================= */
@@ -23,81 +20,34 @@ body{
     position:fixed;
     top:0;
     width:100%;
-    height:70px;
-    background:rgba(0,0,0,.92);
+    height:64px;
+    background:#000;
     display:flex;
     align-items:center;
-    padding:0 30px;
+    justify-content:center;
     z-index:1000;
 }
 
 .menu-btn{
-    font-size:32px;
+    position:absolute;
+    left:18px;
+    font-size:34px;
     cursor:pointer;
 }
 
 .navbar img{
-    height:75px;
-    margin-left:20px;
-}
-
-/* NAV DESKTOP */
-.nav-links{
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    gap:30px;
-}
-
-.dropdown{
-    position:relative;
-    cursor:pointer;
-    font-weight:600;
-}
-
-.dropdown span{
-    transition:.3s;
-}
-
-.dropdown span:hover{
-    color:#f25c54;
-}
-
-/* SUBMENU DESKTOP */
-.dropdown-menu{
-    position:absolute;
-    top:45px;
-    right:0;
-    background:#111;
-    border-radius:14px;
-    min-width:160px;
-    display:none;
-    flex-direction:column;
-    animation:fadeUp .3s ease;
-}
-
-.dropdown-menu a{
-    padding:12px 16px;
-    text-decoration:none;
-    color:white;
-    font-size:15px;
-    transition:.3s;
-}
-
-.dropdown-menu a:hover{
-    background:#1b1b1b;
-    color:#f25c54;
+    height:50px;
 }
 
 /* ================= MENU MOBILE ================= */
 .menu-lateral{
     position:fixed;
     top:0;
-    left:-260px;
-    width:260px;
+    left:-100%;
+    width:100%;
     height:100vh;
     background:#0e0e0e;
-    padding:90px 25px;
+    padding:90px 30px;
     transition:.4s;
     z-index:2000;
 }
@@ -107,183 +57,111 @@ body{
 .menu-fechar{
     position:absolute;
     top:20px;
-    right:20px;
-    font-size:30px;
-    cursor:pointer;
+    right:25px;
+    font-size:32px;
 }
 
 .menu-lateral a{
     display:block;
+    font-size:22px;
+    margin-bottom:26px;
     color:white;
     text-decoration:none;
-    font-size:18px;
-    margin-bottom:22px;
     font-weight:600;
 }
 
-.menu-lateral a:hover{
-    color:#f25c54;
-}
-
-.submenu{
-    display:none;
-    margin-left:15px;
-}
-
-.submenu a{
-    font-size:16px;
-    margin-bottom:15px;
-    color:#ccc;
-}
-
-/* ================= HERO ================= */
+/* ================= HERO MOBILE ================= */
 .hero{
-    height:95vh;
+    margin-top:64px;
+    height:70vh;
     background:
-        linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-        url("mulher.jpeg"); /* DESKTOP */
+        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),
+        url("Muie.jpg");
     background-size:cover;
-    background-position:center top;
+    background-position:center;
     display:flex;
-    align-items:center;
-    padding:0 70px;
+    align-items:flex-end;
+    padding:30px 20px;
 }
 
 .hero h1{
-    font-size:58px;
-    max-width:600px;
-    animation:fadeUp 1s ease;
+    font-size:32px;
+    line-height:1.2;
 }
 
 /* ================= SECTION ================= */
 .section{
-    padding:100px 50px;
+    padding:60px 20px;
 }
 
 .section h2{
-    font-size:34px;
-    margin-bottom:40px;
+    font-size:26px;
+    margin-bottom:30px;
+    text-align:center;
 }
 
-/* ================= PRODUTOS ================= */
-.produtos{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
+/* ================= PRODUTO MOBILE ================= */
 .card{
-    width:300px;
     background:#111;
-    border-radius:24px;
+    border-radius:28px;
     overflow:hidden;
-    position:relative;
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
 }
 
 .card img{
     width:100%;
-    height:300px;
+    height:360px;
     object-fit:contain;
-    padding:18px;
     background:#0c0c0c;
+    padding:20px;
 }
 
 .info{
+    padding:20px;
+    font-size:18px;
     text-align:center;
-    padding:18px;
-    font-weight:600;
 }
 
-/* SETAS */
+/* SETAS GRANDES */
 .seta{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    width:40px;
-    height:40px;
-    background:rgba(0,0,0,.75);
+    width:54px;
+    height:54px;
+    background:rgba(0,0,0,.7);
     border-radius:50%;
+    font-size:32px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:26px;
-    cursor:pointer;
 }
 
-.esq{left:12px}
-.dir{right:12px}
+.esq{left:15px}
+.dir{right:15px}
 
-/* ================= ANIMAÇÕES ================= */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(20px)}
-    to{opacity:1;transform:translateY(0)}
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-    .nav-links{display:none}
-    .navbar img{height:70px}
-
-    .hero{
-        padding:0 20px;
-        height:85vh;
-        text-align:center;
-
-        /* IMAGEM SOMENTE NO MOBILE */
-        background:
-            linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-            url("Muie.jpg");
-        background-size:cover;
-        background-position:center top;
-    }
-
-    .hero h1{font-size:32px}
-    .section{padding:70px 20px}
-    .section h2{text-align:center;font-size:26px}
-    .produtos{justify-content:center}
-    .card{width:100%;max-width:340px}
+/* DESKTOP */
+@media(min-width:769px){
+    body{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENU MOBILE -->
+<!-- MENU -->
 <div class="menu-lateral" id="menu">
-    <div class="menu-fechar" onclick="toggleMenu()">←</div>
-
-    <a href="index.html">Home</a>
-
-    <a onclick="toggleProdutos()">Produtos ▾</a>
-    <div class="submenu" id="submenuProdutos">
-        <a href="tenis.html">Tênis</a>
-        <a href="camisas.html">Camisas</a>
-        <a href="shorts.html">Shorts</a>
-    </div>
-
+    <div class="menu-fechar" onclick="toggleMenu()">✕</div>
+    <a href="#">Home</a>
+    <a href="#">Tênis</a>
+    <a href="#">Camisas</a>
+    <a href="#">Shorts</a>
     <a href="https://www.instagram.com/queen.fit.store/" target="_blank">Instagram</a>
 </div>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <img src="logo.png" alt="QueenFit Store">
-
-    <div class="nav-links">
-        <div class="dropdown">
-            <span onclick="toggleDropdown()">Produtos ▾</span>
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="tenis.html">Tênis</a>
-                <a href="camisas.html">Camisas</a>
-                <a href="shorts.html">Shorts</a>
-            </div>
-        </div>
-    </div>
+    <img src="logo.png">
 </div>
 
 <!-- HERO -->
@@ -291,35 +169,22 @@ body{
     <h1>Vista sua melhor versão</h1>
 </div>
 
-<!-- MAIS VENDIDO -->
+<!-- PRODUTO -->
 <div class="section">
 <h2>Mais Vendido</h2>
 
-<div class="produtos">
 <div class="card">
-<a href="https://s.shopee.com.br/BNO1EABCB" target="_blank">
-<img id="img1" src="short.jpeg">
-</a>
-<div class="info">Short Fitness Feminino</div>
-<div class="seta esq" onclick="prev()">‹</div>
-<div class="seta dir" onclick="next()">›</div>
-</div>
+    <img id="img1" src="short.jpeg">
+    <div class="info">Short Fitness Feminino</div>
+
+    <div class="seta esq" onclick="prev()">‹</div>
+    <div class="seta dir" onclick="next()">›</div>
 </div>
 </div>
 
 <script>
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("active");
-}
-
-function toggleProdutos(){
-    const sm=document.getElementById("submenuProdutos");
-    sm.style.display = sm.style.display==="block" ? "none" : "block";
-}
-
-function toggleDropdown(){
-    const dm=document.getElementById("dropdownMenu");
-    dm.style.display = dm.style.display==="flex" ? "none" : "flex";
 }
 
 const imgs=["short.jpeg","short.png","short3.jpeg"];
